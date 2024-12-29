@@ -1,0 +1,394 @@
+:root {
+    --primario: hsl(221, 73%, 60%);
+    --primarioOscuro: #153d92;
+    --secundario: #FFCE00;
+    --secundarioOscuro: rgb(233, 287, 2);
+    --blanco: #FFF;
+    --negro: #000;
+    --fuentePrincipal: 'Staatliches', sans-serif;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+
+/** Globales **/
+
+body {
+    background-color: var(--primario);
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--blanco);
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    color: var(--secundario);
+    font-size: 1.5rem;
+}
+
+img {
+    width: 100%;
+}
+
+.contenedor {
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+.container-xl {
+    background-color: var(--blanco);
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+h1,
+h2,
+h3 {
+    text-align: center;
+    color: var(--secundario);
+    font-family: var(--fuentePrincipal);
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 3.2rem;
+}
+
+h3 {
+    font-size: 2.4rem;
+}
+
+.staatliches-regular {
+    font-family: "Staatliches", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+/** Header  **/
+
+.header {
+    display: flex;
+    justify-content: center;
+}
+
+.header__logo {
+    margin: 3rem 0;
+}
+
+
+/** footer **/
+
+.footer {
+    background-color: var(--primarioOscuro);
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+.footer__texto {
+    font-family: var(--fuentePrincipal);
+    text-align: center;
+    font-size: 2rem;
+}
+
+
+/**  Navegacion **/
+
+.navegacion {
+    background-color: var(--primarioOscuro);
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.navegacion__enlace {
+    font-family: var(--fuentePrincipal);
+    color: var(--blanco);
+    font-size: 3rem;
+}
+
+.navegacion__enlace:last-of-type {
+    margin-right: 0;
+}
+
+.navegacion__enlace--activo,
+.navegacion__enlace:hover {
+    color: var(--secundario);
+}
+
+
+/* Grid */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+@media(min-width:768px) {
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.producto {
+    background-color: var(--primarioOscuro);
+    padding: 1rem;
+}
+
+.producto__imagen {
+    width: 100%;
+}
+
+.producto__informacion {}
+
+.producto__nombre {
+    font-size: 4rem;
+    color: var(--blanco);
+}
+
+.producto__precio {
+    font-size: 2.8rem;
+    color: var(--secundario);
+}
+
+.producto__nombre,
+.producto__precio {
+    font-family: var(--fuentePrincipal);
+    margin: 1rem 0;
+    text-align: center;
+    line-height: 1.2;
+}
+
+
+/* Graficos*/
+
+.grafico {
+    min-height: 30rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    grid-column: 1 / 3;
+}
+
+.grafico--laptops {
+    grid-row: 2 / 3;
+    background-image: url('../img/grafico1.jpg');
+}
+
+.grafico--node {
+    background-image: url('../img/grafico2.jpg');
+    grid-row: 8 / 9;
+}
+
+@media (min-width:768px) {
+    .grafico--node {
+        grid-row: 5 / 6;
+        grid-column: 2 / 4;
+    }
+}
+
+
+/** Nosotros **/
+
+.nosotros {
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+}
+
+@media(min-width:768px) {
+    .nosotros {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+    }
+}
+
+.nosotros__contenido {}
+
+.nosotros__imagen {
+    grid-row: 1 / 2;
+}
+
+@media (min-width: 768px) {
+    .nosotros__imagen {
+        grid-column: 2 / 3;
+    }
+}
+
+
+/* bloques */
+
+.bloques {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+@media( min-width:768px) {
+    .bloques {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.bloque {
+    text-align: center;
+}
+
+
+/*.bloque__imagen {
+width: 70%;
+}*/
+
+.bloque__titulo {
+    margin: 0;
+}
+
+
+/* Pagina de producto */
+
+@media(min-width:768px) {
+    .laptop {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+    }
+}
+
+.formulario {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.formulario__campo {
+    border-color: var(--primarioOscuro);
+    border-width: 1rem;
+    border-style: solid;
+    background-color: transparent;
+    color: var(--negro);
+    font-size: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 1rem;
+    appearance: none;
+}
+
+.formulario__submit {
+    background-color: var(--secundario);
+    border: none;
+    font-size: 2rem;
+    font-family: var(--fuentePrincipal);
+    padding: 2rem;
+    transition: background-color .3s ease;
+    grid-column: 1 / 3;
+}
+
+.formulario__submit:hover {
+    font-size: 2.4rem;
+    cursor: pointer;
+    background-color: var(--secundarioOscuro);
+}
+
+.carrito {
+    align-content: center;
+    position: relative;
+    left: 45rem;
+    border: none;
+    /*solid var(--blanco);*/
+    margin: 1rem 1rem;
+}
+
+.carrito_icon {
+    border-color: 3px solid black;
+    margin: 2rem 4rem;
+    margin-bottom: 0rem;
+}
+
+.carrito .Elemento {
+    color: var(--blanco);
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+    padding: 0;
+    margin: 0.5rem;
+}
+
+.laptop__imagen2 {
+    width: 12rem;
+    height: 8rem;
+}
+
+.HeaFactura {
+    border-top: 1px solid;
+    font-size: 2rem;
+}
+
+.LinFactura {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.invoice {
+    /*border: 1px solid;*/
+    width: 80%;
+    margin-left: 5rem;
+}
+
+.LinFactura__subs {
+    text-align: right;
+    font-weight: bold;
+}
+
+.formularioC {
+    /*display: flex;
+    align-content: center;*/
+    margin-left: 20rem;
+    text-align: center;
+    gap: 2rem;
+}
+
+.formularioC fieldset {
+    width: 60rem;
+    /*display: flex;
+    grid-template-columns: repeat(2, 1fr);*/
+    padding: 1rem 1rem;
+    gap: 1rem;
+}
+
+.formularioC label,
+legend {
+    font-size: 2rem;
+}
+
+.formularioC .campoC {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.formularioC .formulario__campo {
+    width: 80%;
+    border-width: 0.5rem;
+    margin-left: 3rem;
+    margin-bottom: 1rem;
+}
+
+.modal-content {
+    color: var(--negro);
+}
